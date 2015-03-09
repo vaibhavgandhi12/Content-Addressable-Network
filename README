@@ -1,0 +1,39 @@
+README
+================================================================================
+
+---> Setup
+1. To compile files use
+			javac *.java
+
+
+---> Execution
+1. To start bootstrap server use
+			java Bootstrap
+	Keep in mind what the IP of bootstrap is.
+2. To start Client  use
+			java Client <bootstrap ip>
+			
+
+---> Information about the project
+1. Used Java RMI
+2. Files included are Bootstrap.java, BootstrapInterface.java, Client.java, ClientInterface.java, Coordinate.java, Neighbour.java
+3. 
+			
+
+---> Ideal Situation:
+1. Start the Bootstrap server using 
+			java Bootstrap 
+on any CS department server. Get the bootstrap IP address.
+2. For each server, use a DIFFERENT cs server. Start the 1st peer using
+			java Client bootstrapIP
+3. Join the CAN network using option 1. Use option 3 to view it's neighbours list which should be empty. Use option 4 and use the peer's identifier to print it's details or enter view to get details of all peers. Use option 5 to add files to this node. Use option 6 to search for a file and use option 7 to view all files present on that node.
+4. Once you have added some files to the 1st peer, add another node. If the files fall in this peer's virtual space, then the files will automatically be moved.
+5. Leave can be tested here. After that the peer can rejoin.
+6. Add another peer, 3rd peer. Again more files can be added, removed, searched for. At any given point details about any given peer can be looked up.
+7. Let the 3rd peer leave using option 2. Notice all the other peers get updated automatically. Leave is only allowed if the peer can find a node with same size.
+8. The 3rd peer can rejoin or a new peer can join the system.
+9. Exit for a peer is only allowed if the peer has left the system.
+10. A file can be added only if the file is present on the disk of that peer.
+11. When only 1 peer is present and made to leave, all file references will be lost.
+12. Multiple peers (> 7) can join this CAN system.
+13. If leave is performed in a proper order then all nodes can leave, with nothing in the CAN system remaining and bootstrap server pointing to no peer.
